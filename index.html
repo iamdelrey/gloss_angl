@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Glossary Site</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f8f8;
+      }
+      .navigation {
+        display: flex;
+        justify-content: center;
+        padding: 20px;
+        background-color: #444;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      .navigation a {
+        padding: 10px 15px;
+        margin: 0 10px;
+        background-color: #f8f8f8;
+        color: #444;
+        text-decoration: none;
+        border-radius: 20px;
+        transition: background-color 0.3s ease;
+      }
+      .navigation a:hover {
+        background-color: #ddd;
+      }
+      .word-section {
+        padding: 40px;
+        background-color: #fff;
+        margin: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      .word-title {
+        font-size: 32px;
+        margin-bottom: 10px;
+        color: #333;
+      }
+      .word-image {
+        max-width: 200px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      .word-details {
+        margin-top: 20px;
+        color: #666;
+        line-height: 1.6;
+        font-size: 20px;
+      }
+      .abbreviation-section {
+        padding: 40px;
+        background-color: #f4f4f4;
+        margin: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      .abbreviation-title {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: #333;
+      }
+      .abbreviation-details {
+        margin-top: 10px;
+        color: #666;
+        line-height: 1.6;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navigation">
+      <a href="#A">A</a>
+      <a href="#C">C</a>
+      <a href="#D">D</a>
+      <a href="#E">E</a>
+      <a href="#R">R</a>
+      <a href="#S">S</a>
+      <a href="#V">V</a>
+      <a href="#W">W</a>
+      <a href="#Abbr">Abbreviations</a>
+    </div>
+
+    <div id="wordContainer">
+      <!-- Здесь будут генерироваться слова -->
+    </div>
+
+    <div class="abbreviation-section" id="Abbr">
+      <h2 class="abbreviation-title">Abbreviations</h2>
+      <div class="abbreviation-details">
+        <p><strong>AI:</strong> Artificial Intelligence</p>
+        <p><strong>AR:</strong> Augmented Reality</p>
+        <p><strong>DDoS:</strong> Distributed Denial of Service</p>
+        <p><strong>IoT:</strong> the Internet of Things</p>
+        <p><strong>MFA:</strong> Multi-Factor Authentication</p>
+        <p><strong>VR:</strong> Virtual Reality</p>
+      </div>
+    </div>
+
+    <script>
+      // Создаем объект для хранения информации о словах
+      const words = [
+        {
+          id: "A",
+          title: "Adware",
+          translation: "Рекламное ПО",
+          transcription: "[ˈædˌwɛə]",
+          description:
+            "Software that automatically displays or downloads advertising material (often unwanted) when a user is online.",
+        },
+        {
+          id: "A",
+          title: "Antivirus software",
+          translation: "Противовирусное ПО",
+          transcription: "[ˌæntiˈvaɪrəs ˈsɒftwɛə]",
+          description:
+            "Software designed to detect and remove computer viruses and other malicious software.",
+        },
+        // Другие слова добавляем аналогично
+        {
+          id: "C",
+          title: "Cybercrime",
+          translation: "Киберпреступность",
+          transcription: "[ˈsaɪbər kraɪm]",
+          description:
+            "Criminal activities carried out by means of computers or the Internet.",
+        },
+        {
+          id: "C",
+          title: "Cybersecurity",
+          translation: "Кибербезопасность",
+          transcription: "[ˈsaɪbərˌsikjʊrɪti]",
+          description:
+            "Measures taken to protect a computer or computer system against unauthorized access or attack.",
+        },
+        // Другие слова добавляем аналогично
+      ];
+
+      // Функция для генерации HTML на основе массива слов
+      function generateWordHTML(word) {
+        return `
+            <div class="word-section" id="${word.id}">
+                <h2 class="word-title">${word.title}</h2>
+                <img class="word-image" src="https://via.placeholder.com/150" alt="${word.title}" />
+                <p class="word-details">
+                    Translation: ${word.translation}<br />
+                    Transcription: ${word.transcription}<br />
+                    Description: ${word.description}
+                </p>
+            </div>
+        `;
+      }
+
+      // Получаем контейнер для слов
+      const wordContainer = document.getElementById("wordContainer");
+
+      // Добавляем каждое слово в контейнер
+      words.forEach((word) => {
+        wordContainer.innerHTML += generateWordHTML(word);
+      });
+
+      // Добавляем прокрутку при клике на ссылки навигации
+      document.querySelectorAll(".navigation a").forEach((link) => {
+        link.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
