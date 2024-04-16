@@ -1,149 +1,1223 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Glossary Site</title>
-    <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f8f8f8;
-      }
-      .navigation {
-        display: flex;
-        justify-content: center;
-        padding: 20px;
-        background-color: #444;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      }
-      .navigation a {
-        padding: 10px 15px;
-        margin: 0 10px;
-        background-color: #f8f8f8;
-        color: #444;
-        text-decoration: none;
-        border-radius: 20px;
-        transition: background-color 0.3s ease;
-      }
-      .navigation a:hover {
-        background-color: #ddd;
-      }
-      .word-section {
-        padding: 40px;
-        background-color: #fff;
-        margin: 20px;
-        border-radius: 10px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      }
-      .word-title {
-        font-size: 32px;
-        margin-bottom: 10px;
-        color: #333;
-      }
-      .word-image {
-        max-width: 200px;
-        border-radius: 10px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      }
-      .word-details {
-        margin-top: 20px;
-        color: #666;
-        line-height: 1.6;
-        font-size: 20px;
-      }
-      .abbreviation-section {
-        padding: 40px;
-        background-color: #f4f4f4;
-        margin: 20px;
-        border-radius: 10px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      }
-      .abbreviation-title {
-        font-size: 24px;
-        margin-bottom: 10px;
-        color: #333;
-      }
-      .abbreviation-details {
-        margin-top: 10px;
-        color: #666;
-        line-height: 1.6;
-        font-size: 20px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="navigation">
-      <a href="#A">A</a>
-      <a href="#C">C</a>
-      <a href="#D">D</a>
-      <a href="#E">E</a>
-      <a href="#R">R</a>
-      <a href="#S">S</a>
-      <a href="#V">V</a>
-      <a href="#W">W</a>
-      <a href="#Abbr">Abbreviations</a>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Glossary Site</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f8f8;
+    }
+
+    .navigation {
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+      background-color: #444;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .navigation a {
+      padding: 10px 15px;
+      margin: 0 10px;
+      background-color: #f8f8f8;
+      color: #444;
+      text-decoration: none;
+      border-radius: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    .navigation a:hover {
+      background-color: #ddd;
+    }
+
+    .word-section {
+      padding: 40px;
+      background-color: #fff;
+      margin: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .word-title {
+      font-size: 32px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .word-image {
+      max-width: 200px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .word-details {
+      margin-top: 20px;
+      color: #666;
+      line-height: 1.6;
+      font-size: 20px;
+    }
+
+    .abbreviation-section {
+      padding: 40px;
+      background-color: #f4f4f4;
+      margin: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    }
+
+    .abbreviation-title {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .abbreviation-details {
+      margin-top: 10px;
+      color: #666;
+      line-height: 1.6;
+      font-size: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navigation">
+    <a href="#A">A</a>
+    <a href="#B">B</a>
+    <a href="#C">C</a>
+    <a href="#D">D</a>
+    <a href="#E">E</a>
+    <a href="#F">F</a>
+    <a href="#H">H</a>
+    <a href="#I">I</a>
+    <a href="#M">M</a>
+    <a href="#N">N</a>
+    <a href="#P">P</a>
+    <a href="#R">R</a>
+    <a href="#S">S</a>
+    <a href="#T">T</a>
+    <a href="#U">U</a>
+    <a href="#V">V</a>
+    <a href="#W">W</a>
+    <a href="#Abbr">Abbreviations</a>
+  </div>
+
+  <div id="wordContainer">
+    <!-- Здесь будут генерироваться слова -->
+  </div>
+
+  <div class="abbreviation-section" id="Abbr">
+    <h2 class="abbreviation-title">Abbreviations</h2>
+    <div class="abbreviation-details">
+      <p><strong>ADSL:</strong> Asymmetric Digital Subscriber Line</p>
+      <p><strong>ALU:</strong> Arithmetic Logic Unit</p>
+      <p><strong>AR:</strong> Augmented Reality</p>
+      <p><strong>BIOS:</strong> Basic Input/Output System</p>
+      <p><strong>CD-R:</strong> Compact Disc (recordable)</p>
+      <p><strong>CD-ROM:</strong> Compact Disc (read-only memory)</p>
+      <p><strong>CD-RW:</strong> Compact Disc (rewritable)</p>
+      <p><strong>CLI:</strong> Command Line Interface</p>
+      <p><strong>CPU:</strong> Central Processing Unit</p>
+      <p><strong>CSS:</strong> Cascading Style Sheets</p>
+      <p><strong>DNS:</strong> Domain Name System</p>
+      <p><strong>DVD:</strong> Digital Versatile Disc</p>
+      <p><strong>GUI:</strong> Graphical User Interface</p>
+      <p><strong>HDD:</strong> Hard Disk Drive</p>
+      <p><strong>HTML:</strong> Hyper Text Markup Language</p>
+      <p><strong>HTTP:</strong> Hyper Text Transfer Protocol</p>
+      <p><strong>IOT:</strong> the Internet of Things</p>
+      <p><strong>ISP:</strong> Internet Service Provider</p>
+      <p><strong>LAN:</strong> Local Area Network</p>
+      <p><strong>MFA:</strong> Multi-Factor Authentication</p>
+      <p><strong>MAN:</strong> Metropolitan Area Network</p>
+      <p><strong>OSI:</strong> Open System Interconnection</p>
+      <p><strong>PAN:</strong> Personal Area Network</p>
+      <p><strong>RAM:</strong> Random Access Memory</p>
+      <p><strong>ROM:</strong> Read Only Memory</p>
+      <p><strong>SEO:</strong> Search Engine Optimization</p>
+      <p><strong>SSD:</strong> Solid State Drive</p>
+      <p><strong>USB:</strong> Universal Serial Bus</p>
+      <p><strong>URL:</strong> Uniform Resource Locator</p>
+      <p><strong>VR:</strong> Virtual Reality</p>
+      <p><strong>WAN:</strong> Wide Area Network</p>
+      <p><strong>WIMP:</strong> Windows Icons Menus Pointer</p>
+      <p><strong>WWW:</strong> World Wide Web</p>
     </div>
+  </div>
 
-    <div id="wordContainer">
-      <!-- Здесь будут генерироваться слова -->
-    </div>
 
-    <div class="abbreviation-section" id="Abbr">
-      <h2 class="abbreviation-title">Abbreviations</h2>
-      <div class="abbreviation-details">
-        <p><strong>AI:</strong> Artificial Intelligence</p>
-        <p><strong>AR:</strong> Augmented Reality</p>
-        <p><strong>DDoS:</strong> Distributed Denial of Service</p>
-        <p><strong>IoT:</strong> the Internet of Things</p>
-        <p><strong>MFA:</strong> Multi-Factor Authentication</p>
-        <p><strong>VR:</strong> Virtual Reality</p>
-      </div>
-    </div>
+  <script>
+    const words = [
+      {
+        id: "A",
+        title: "Adware",
+        translation: "рекламное ПО",
+        transcription: "[ˈædˌwɛər]",
+        description: "Software that automatically displays or downloads advertising material when a user is online.",
+      },
+      {
+        id: "A",
+        title: "Antivirus software",
+        translation: "противовирусное ПО",
+        transcription: "[ˈæntiˌvaɪrəs ˈsɒftˌwɛər]",
+        description: "Software designed to detect and remove computer viruses and other malicious software.",
+      },
+      {
+        id: "A",
+        title: "Artificial intelligence",
+        translation: "искусственный интеллект",
+        transcription: "[ˌɑːtɪˈfɪʃəl ɪnˈtɛlɪdʒəns]",
+        description: "The simulation of human intelligence processes by computer systems.",
+      },
+      {
+        id: "A",
+        title: "Augmented reality",
+        translation: "дополненная реальность",
+        transcription: "[ˈɔːɡmɛntɪd riˈælɪti]",
+        description: "Technology that superimposes virtual objects onto the real world, creating a mixed perception of the environment.",
+      },
+      {
+        id: "A",
+        title: "Authentication",
+        translation: "идентификация",
+        transcription: "[ɔːˌθɛntɪˌkeɪʃən]",
+        description: "The process of verifying the authenticity or correctness of provided information, such as a password or identification data.",
+      },
+      {
+        id: "C",
+        title: "Copyright violation",
+        translation: "нарушение авторских прав",
+        transcription: "[ˈkɒpɪˌraɪt vaɪəˈleɪʃən]",
+        description: "The unauthorized use or distribution of materials protected by copyright without the permission of the rights holder.",
+      },
+      {
+        id: "C",
+        title: "Cryptanalysis",
+        translation: "криптоанализ",
+        transcription: "[ˌkrɪptəˈnælɪsɪs]",
+        description: "The process of analyzing and deciphering encrypted data, often to reveal confidential information.",
+      },
+      {
+        id: "C",
+        title: "Cybercrime",
+        translation: "киберпреступность",
+        transcription: "[ˈsaɪbəkraɪm]",
+        description: "Criminal activities carried out using computer technology or the Internet.",
+      },
+      {
+        id: "C",
+        title: "Cybersecurity",
+        translation: "кибербезопасность",
+        transcription: "[ˈsaɪbəsɪkjʊərɪti]",
+        description: "The protection of computer systems, programs, and data from cyber attacks, data theft, and other online threats.",
+      },
+      {
+        id: "D",
+        title: "Default settings",
+        translation: "настройки по умолчанию",
+        transcription: "[dɪˈfɔːlt ˈsɛtɪŋz]",
+        description: "Values or settings that are automatically used if the user does not make their own changes.",
+      },
+      {
+        id: "T",
+        title: "To deny access",
+        translation: "отказать в доступе",
+        transcription: "[tuː dɪˈnaɪ ˈæksɛs]",
+        description: "Refusing to grant the right of access to any resources, data, or services.",
+      },
+      {
+        id: "E",
+        title: "Encryption",
+        translation: "шифрование",
+        transcription: "[ɪnˈkrɪpʃən]",
+        description: "The process of converting information into an unreadable format using algorithms and keys to ensure the security of data transmission or storage.",
+      },
+      {
+        id: "F",
+        title: "Firewall",
+        translation: "сетевой экран, сетевой фильтр",
+        transcription: "[ˈfaɪəwɔːl]",
+        description: "A network security system that controls and filters network traffic based on predetermined rules.",
+      },
+      {
+        id: "M",
+        title: "Malware",
+        translation: "вредоносное программное обеспечение",
+        transcription: "[ˈmælˌwɛə]",
+        description: "Software designed to cause harm to computer systems, users, or networks, including viruses, trojans, and worms.",
+      },
+      {
+        id: "N",
+        title: "Neural network",
+        translation: "нейронная сеть",
+        transcription: "[ˈnjʊərəl ˈnɛtwɜːk]",
+        description: "A computer algorithmic system that mimics the workings of the human brain, used for pattern recognition, learning, and data analysis.",
+      },
+      {
+        id: "U",
+        title: "Unauthorized access",
+        translation: "несанкционированный доступ",
+        transcription: "[ʌnˈɔːθəraɪzd ˈæksɛs]",
+        description: "Gaining access to resources or data without the permission of the owner or system administrator.",
+      },
+      {
+        id: "R",
+        title: "Ransomware",
+        translation: "программы-вымогатели",
+        transcription: "[ˈrænsəmˌwɛə]",
+        description: "Malicious software that blocks access to a system or data and demands payment to restore access.",
+      },
+      {
+        id: "R",
+        title: "Remote access",
+        translation: "удалённый доступ",
+        transcription: "[rɪˈməʊt ˈæksɛs]",
+        description: "The ability to access a computer system or data from a remote location through a network or the Internet.",
+      },
+      {
+        id: "R",
+        title: "Robotics",
+        translation: "робототехника",
+        transcription: "[rəʊˈbɒtɪks]",
+        description: "The branch of technology that deals with the design, construction, and operation of robots.",
+      },
+      {
+        id: "S",
+        title: "Software piracy",
+        translation: "компьютерное пиратство",
+        transcription: "[ˈsɒftˌwɛə ˈpaɪrəsi]",
+        description: "The unauthorized use, copying, distribution, or sale of software without the consent of the copyright holder.",
+      },
+      {
+        id: "S",
+        title: "Spyware",
+        translation: "шпионские программы",
+        transcription: "[ˈspaɪwɛə]",
+        description: "Malicious software that gathers information about users without their consent or knowledge.",
+      },
+      {
+        id: "V",
+        title: "Virtual reality",
+        translation: "виртуальная реальность",
+        transcription: "[ˈvɜːtʃʊəl riˈælɪti]",
+        description: "A computer-generated environment that simulates physical presence, allowing users to interact with virtual objects and surroundings.",
+      },
+      {
+        id: "V",
+        title: "Voice recognition",
+        translation: "распознавание голоса",
+        transcription: "[vɔɪs rɛkəɡˈnɪʃən]",
+        description: "Technology that enables a computer to recognize and interpret human speech or commands.",
+      },
+      {
+        id: "W",
+        title: "Worm",
+        translation: "червь",
+        transcription: "[wɜːm]",
+        description: "A type of malicious software that spreads through networks by copying itself to other computers and devices.",
+      },
+      {
+        id: "A",
+        title: "Assembler",
+        translation: "ассемблер",
+        transcription: "[əˈsɛmblər]",
+        description: "A program that translates assembly language into machine code.",
+      },
+      {
+        id: "A",
+        title: "Assembly languages",
+        translation: "языки ассемблера",
+        transcription: "[əˈsɛmbli ˈlæŋɡwɪdʒɪz]",
+        description: "Low-level programming languages that are specific to a particular computer architecture.",
+      },
+      {
+        id: "B",
+        title: "Bandwidth",
+        translation: "пропускная способность",
+        transcription: "[ˈbændwɪdθ]",
+        description: "The maximum amount of data that can be transmitted over a network connection in a given amount of time.",
+      },
+      {
+        id: "B",
+        title: "Binary code",
+        translation: "двоичный код",
+        transcription: "[ˈbaɪnəri koʊd]",
+        description: "A coding system using the binary digits 0 and 1 to represent characters, numbers, and instructions in a computer.",
+      },
+      {
+        id: "C",
+        title: "Cellular connection",
+        translation: "сотовая связь",
+        transcription: "[ˈsɛljələr kəˈnɛkʃən]",
+        description: "A connection to a network provided by cellular towers, allowing mobile devices to communicate wirelessly.",
+      },
+      {
+        id: "C",
+        title: "Compiler",
+        translation: "компилятор",
+        transcription: "[kəmˈpaɪlər]",
+        description: "A program that translates source code written in a high-level programming language into machine code.",
+      },
+      {
+        id: "C",
+        title: "Copper cable",
+        translation: "медный провод",
+        transcription: "[ˈkɒpər ˈkeɪbəl]",
+        description: "A type of electrical cable made from copper, commonly used for transmitting data or electricity.",
+      },
+      {
+        id: "C",
+        title: "Crawler-based search engine",
+        translation: "автоматическая поисковая система",
+        transcription: "[ˈkrɔːlər-beɪst sɜːrtʃ ˈɛndʒɪn]",
+        description: "A search engine that uses automated programs, called crawlers or spiders, to index web pages and retrieve search results.",
+      },
+      {
+        id: "C",
+        title: "CSS",
+        translation: "каскадная таблица стилей",
+        transcription: "[siː ɛs ɛs]",
+        description: "A style sheet language used for describing the presentation of a document written in HTML or XML.",
+      },
+      {
+        id: "D",
+        title: "Dial-up connection",
+        translation: "коммутируемое соединение",
+        transcription: "[ˈdaɪəl-ʌp kəˈnɛkʃən]",
+        description: "An Internet connection that uses a standard telephone line and a modem to dial into an Internet service provider (ISP).",
+      },
+      {
+        id: "D",
+        title: "Data transmission",
+        translation: "передача данных",
+        transcription: "[ˈdeɪtə trænzˈmɪʃən]",
+        description: "The process of sending digital information from one device to another over a network.",
+      },
+      {
+        id: "D",
+        title: "Dedicated line",
+        translation: "выделенная линия",
+        transcription: "[ˈdɛdɪkeɪtɪd laɪn]",
+        description: "A communication line reserved for the exclusive use of a single user or application.",
+      },
+      {
+        id: "D",
+        title: "Download speed",
+        translation: "скорость скачивания",
+        transcription: "[ˈdaʊnˌloʊd spiːd]",
+        description: "The rate at which data is transferred from the Internet to a device, measured in bits per second (bps) or kilobits per second (kbps).",
+      },
+      {
+        id: "D",
+        title: "DSL",
+        translation: "цифровая абонентская линия",
+        transcription: "[diːɛsˈɛl]",
+        description: "A type of high-speed Internet connection that uses existing copper telephone lines to transmit digital data.",
+      },
+      {
+        id: "E",
+        title: "Encapsulation",
+        translation: "инкапсуляция",
+        transcription: "[ɪnˌkæpsjʊˈleɪʃən]",
+        description: "A fundamental principle of object-oriented programming that combines data and functions into a single unit called an object.",
+      },
+      {
+        id: "F",
+        title: "Fiber-optic technology",
+        translation: "оптоволоконная технология",
+        transcription: "[ˈfaɪbər-ˈɒptɪk tɛkˈnɒlədʒi]",
+        description: "A method of transmitting data using pulses of light through optical fibers made of glass or plastic.",
+      },
+      {
+        id: "F",
+        title: "Frequency",
+        translation: "частота",
+        transcription: "[ˈfriːkwənsi]",
+        description: "The number of cycles per second of a periodic waveform, typically measured in hertz (Hz).",
+      },
+      {
+        id: "H",
+        title: "High-level / Low-level languages",
+        translation: "высокоуровневые / низкоуровневые языки",
+        transcription: "[haɪ-lɛvəl / loʊ-lɛvəl ˈlæŋɡwɪdʒɪz]",
+        description: "High-level languages are programming languages that are closer to human languages, while low-level languages are closer to machine languages.",
+      },
+      {
+        id: "H",
+        title: "High-speed Internet connection",
+        translation: "высокоскоростное интернет соединение",
+        transcription: "[haɪ-spɪd ˈɪntərˌnɛt kəˈnɛkʃən]",
+        description: "An Internet connection with a faster transmission rate, typically using broadband technologies such as DSL, cable, or fiber-optic.",
+      },
+      {
+        id: "H",
+        title: "HTML",
+        translation: "язык гипертекстовой разметки",
+        transcription: "[eɪʧ tiː ɛm ɛl]",
+        description: "A markup language used for creating and structuring web pages and web applications.",
+      },
+      {
+        id: "H",
+        title: "Human-powered directory",
+        translation: "веб-каталог",
+        transcription: "[ˈhjuːmən-paʊərd dɪˈrɛktəri]",
+        description: "A web directory that is organized and maintained by human editors, categorizing websites into different topics or subjects.",
+      },
+      {
+        id: "H",
+        title: "Hybrid search engine",
+        translation: "гибридный поисковик",
+        transcription: "[ˈhaɪbrɪd sɜːrtʃ ˈɛndʒɪn]",
+        description: "A search engine that combines results from multiple sources, such as web crawlers, databases, and user submissions.",
+      },
+      {
+        id: "H",
+        title: "Hyperlink",
+        translation: "гиперссылка",
+        transcription: "[ˈhaɪpərˌlɪŋk]",
+        description: "A clickable link in a document or webpage that leads to another location or resource.",
+      },
+      {
+        id: "I",
+        title: "Inheritance",
+        translation: "наследование",
+        transcription: "[ɪnˈhɛrɪtəns]",
+        description: "A mechanism in object-oriented programming where a new class inherits properties and behaviors from an existing class.",
+      },
+      {
+        id: "I",
+        title: "Internet access",
+        translation: "доступ к интернету",
+        transcription: "[ˈɪntərˌnɛt ˈæksɛs]",
+        description: "The ability to connect to the Internet to browse websites, send emails, and access online services.",
+      },
+      {
+        id: "I",
+        title: "Interpreter",
+        translation: "интерпретатор",
+        transcription: "[ɪnˈtɜːrprɪtər]",
+        description: "A program that translates and executes source code line by line, without the need for compilation.",
+      },
+      {
+        id: "M",
+        title: "Markup tags",
+        translation: "теги разметки",
+        transcription: "[ˈmɑːrkʌp tæɡz]",
+        description: "Symbols or codes inserted into a document to define its structure, formatting, or presentation.",
+      },
+      {
+        id: "M",
+        title: "Metasearch engine",
+        translation: "метапоисковая система",
+        transcription: "[ˈmɛtəsɜːrtʃ ˈɛndʒɪn]",
+        description: "A search engine that sends user queries to multiple other search engines and aggregates the results.",
+      },
+      {
+        id: "P",
+        title: "Polymorphism",
+        translation: "полиморфизм",
+        transcription: "[ˌpɒlɪˈmɔːfɪzəm]",
+        description: "A feature of object-oriented programming that allows objects of different classes to be treated as objects of a common superclass.",
+      },
+      {
+        id: "R",
+        title: "Request / Query / Search string",
+        translation: "поисковый запрос",
+        transcription: "[rɪˈkwɛst / kwɪəri / sɜːrtʃ strɪŋ]",
+        description: "A string of characters used to search for information on the Internet or in a database.",
+      },
+      {
+        id: "S",
+        title: "Satellite connection",
+        translation: "спутниковая связь",
+        transcription: "[ˈsætəlaɪt kəˈnɛkʃən]",
+        description: "A communication link established through satellites orbiting the Earth, used for transmitting data over long distances.",
+      },
+      {
+        id: "S",
+        title: "Search bar / Search box",
+        translation: "строка поиска",
+        transcription: "[sɜːrtʃ bɑːr / sɜːrtʃ bɒks]",
+        description: "An input field on a website or application where users can enter keywords or phrases to search for information.",
+      },
+      {
+        id: "S",
+        title: "Source code",
+        translation: "исходный код",
+        transcription: "[sɔrs koʊd]",
+        description: "The human-readable version of a computer program, written in a programming language before it is compiled or interpreted.",
+      },
+      {
+        id: "T",
+        title: "Template",
+        translation: "шаблон",
+        transcription: "[ˈtɛmplɪt]",
+        description: "A pre-designed format or layout used as a starting point for creating documents, websites, or other materials.",
+      },
+      {
+        id: "U",
+        title: "Upload speed",
+        translation: "скорость отправки",
+        transcription: "[ˈʌpˌloʊd spiːd]",
+        description: "The rate at which data is transferred from a device to the Internet, measured in bits per second (bps) or kilobits per second (kbps).",
+      },
+      {
+        id: "U",
+        title: "URL",
+        translation: "электронный адрес ресурса",
+        transcription: "[juː ɑːr ˈɛl]",
+        description: "A Uniform Resource Locator that specifies the location of a resource on the Internet, such as a webpage or file.",
+      },
+      {
+        id: "W",
+        title: "World Wide Web",
+        translation: "всемирная паутина",
+        transcription: "[wɜːld waɪd wɛb]",
+        description: "A system of interconnected hypertext documents accessed via the Internet, commonly referred to as the Web.",
+      },
+      {
+        id: "A",
+        title: "Abacus",
+        translation: "счёты",
+        transcription: "[ˈæbəkəs]",
+        description: "An ancient tool used for performing arithmetic calculations.",
+      },
+      {
+        id: "B",
+        title: "Battery pack",
+        translation: "аккумуляторная батарея",
+        transcription: "[ˈbætəri pæk]",
+        description: "A group of individual batteries or cells configured to provide power to a device.",
+      },
+      {
+        id: "B",
+        title: "Built-in webcam",
+        translation: "встроенная камера",
+        transcription: "[ˈbɪlt-ɪn ˈwɛbˌkæm]",
+        description: "A camera integrated into a device such as a laptop or smartphone.",
+      },
+      {
+        id: "B",
+        title: "Bus",
+        translation: "шина",
+        transcription: "[bʌs]",
+        description: "A communication system that transfers data between components inside a computer or between computers.",
+      },
+      {
+        id: "C",
+        title: "Cache hit",
+        translation: "попадание в кэш",
+        transcription: "[kæʃ hɪt]",
+        description: "A situation where the requested data is found in the cache memory, resulting in faster access.",
+      },
+      {
+        id: "C",
+        title: "Cache coherency",
+        translation: "согласованность кэша",
+        transcription: "[kæʃ koʊˈhɪrənsi]",
+        description: "The consistency of data stored in multiple caches that reference the same memory location.",
+      },
+      {
+        id: "C",
+        title: "Calculations",
+        translation: "вычисления",
+        transcription: "[ˌkælkjʊˈleɪʃənz]",
+        description: "The process of determining a value by performing mathematical operations.",
+      },
+      {
+        id: "C",
+        title: "Clock speed",
+        translation: "тактовая частота",
+        transcription: "[klɒk spiːd]",
+        description: "The rate at which a computer's CPU executes instructions, measured in cycles per second (hertz).",
+      },
+      {
+        id: "C",
+        title: "Control unit",
+        translation: "блок управления",
+        transcription: "[kənˈtroʊl ˈjuːnɪt]",
+        description: "A component of a CPU that manages the execution of instructions and coordinates the operation of other hardware components.",
+      },
+      {
+        id: "D",
+        title: "Desktop PC",
+        translation: "настольный компьютер",
+        transcription: "[ˈdɛskˌtɒp piːˈsiː]",
+        description: "A personal computer designed to be used on a desk or table, typically consisting of a monitor, keyboard, and system unit.",
+      },
+      {
+        id: "E",
+        title: "Expansion card",
+        translation: "карта расширения",
+        transcription: "[ɪkˈspænʃən kɑːrd]",
+        description: "A removable circuit board that adds functionality to a computer by providing additional ports, memory, or processing power.",
+      },
+      {
+        id: "H",
+        title: "Hardware",
+        translation: "аппаратное обеспечение",
+        transcription: "[ˈhɑrdwɛər]",
+        description: "The physical components of a computer system, including the processor, memory, storage devices, and peripherals.",
+      },
+      {
+        id: "H",
+        title: "Head crash",
+        translation: "поломка магнитной головки",
+        transcription: "[hɛd kræʃ]",
+        description: "A catastrophic failure of a hard disk drive caused by the read/write head making contact with the magnetic storage surface.",
+      },
+      {
+        id: "H",
+        title: "Headphones",
+        translation: "наушники",
+        transcription: "[ˈhɛdˌfoʊnz]",
+        description: "A pair of small speakers worn over the ears to listen to audio from a computer, smartphone, or other electronic device.",
+      },
+      {
+        id: "I",
+        title: "Input device",
+        translation: "устройство ввода информации",
+        transcription: "[ˈɪnˌpʊt dɪˈvaɪs]",
+        description: "A peripheral device used to enter data or commands into a computer system, such as a keyboard, mouse, or touchscreen.",
+      },
+      {
+        id: "I",
+        title: "Integrated circuit",
+        translation: "микросхема, интегральная схема",
+        transcription: "[ˈɪntɪˌɡreɪtɪd ˈsɜːrkɪt]",
+        description: "A semiconductor chip containing thousands or millions of electronic components, such as transistors, resistors, and capacitors, fabricated onto a single piece of silicon.",
+      },
+      {
+        id: "M",
+        title: "Memory capacity",
+        translation: "объём памяти",
+        transcription: "[ˈmɛməri kəˈpæsɪti]",
+        description: "The amount of data that can be stored in a computer's memory, typically measured in bytes, kilobytes, megabytes, or gigabytes.",
+      },
+      {
+        id: "M",
+        title: "Motherboard",
+        translation: "материнская плата",
+        transcription: "[ˈmʌðərˌbɔːrd]",
+        description: "The main circuit board in a computer system that holds the CPU, memory, expansion slots, and other essential components.",
+      },
+      {
+        id: "M",
+        title: "Multi-core CPU",
+        translation: "многоядерный процессор",
+        transcription: "[ˈmʌlti-kɔːr ˈsiːpjuː]",
+        description: "A CPU that contains multiple independent processing units, or cores, allowing it to execute multiple tasks simultaneously.",
+      },
+      {
+        id: "O",
+        title: "Output device",
+        translation: "устройство вывода информации",
+        transcription: "[ˈaʊtpʊt dɪˈvaɪs]",
+        description: "A peripheral device used to display or present data processed by a computer system, such as a monitor, printer, or speakers.",
+      },
+      {
+        id: "P",
+        title: "Performance",
+        translation: "производительность",
+        transcription: "[pərˈfɔːrməns]",
+        description: "The speed and efficiency with which a computer system or component executes tasks or processes.",
+      },
+      {
+        id: "P",
+        title: "Peripherals",
+        translation: "подключаемое оборудование",
+        transcription: "[pəˈrɪfərəlz]",
+        description: "Devices connected to a computer system that provide input, output, or storage capabilities, such as keyboards, mice, printers, and external hard drives.",
+      },
+      {
+        id: "P",
+        title: "Power-supply unit",
+        translation: "блок питания",
+        transcription: "[ˈpaʊər-səˌplaɪ ˈjuːnɪt]",
+        description: "A component of a computer system that converts electrical power from an outlet into the appropriate voltage and current for powering the other components.",
+      },
+      {
+        id: "P",
+        title: "Primary storage",
+        translation: "первичное хранение",
+        transcription: "[ˈpraɪˌmɛri ˈstɔːrɪdʒ]",
+        description: "The main storage area in a computer system, typically consisting of RAM and ROM, used for temporarily storing data and instructions.",
+      },
+      {
+        id: "P",
+        title: "Punched card",
+        translation: "перфокарта",
+        transcription: "[pʌnʧt kɑːrd]",
+        description: "A stiff paper card with holes punched in specific positions to represent data, instructions, or commands for computer processing.",
+      },
+      {
+        id: "Q",
+        title: "Quad-core CPU",
+        translation: "четырёх ядерный процессор",
+        transcription: "[kwɒd-kɔːr ˈsiːpjuː]",
+        description: "A CPU that contains four independent processing units, or cores, allowing it to execute multiple tasks simultaneously.",
+      },
+      {
+        id: "R",
+        title: "RAM",
+        translation: "оперативная память (ОЗУ)",
+        transcription: "[ræm]",
+        description: "Random Access Memory, a type of computer memory that can be accessed randomly and used to store data temporarily while the computer is running.",
+      },
+      {
+        id: "R",
+        title: "ROM",
+        translation: "постоянное запоминающее устройство (ПЗУ)",
+        transcription: "[rɒm]",
+        description: "Read-Only Memory, a type of computer memory that stores data permanently and cannot be modified or erased by normal computer processes.",
+      },
+      {
+        id: "S",
+        title: "Semiconductor",
+        translation: "полупроводник",
+        transcription: "[ˌsɛmɪkənˈdʌktər]",
+        description: "A material that has electrical conductivity between that of a conductor and an insulator, commonly used in electronic components such as transistors and diodes.",
+      },
+      {
+        id: "S",
+        title: "Silicon",
+        translation: "кремний",
+        transcription: "[ˈsɪlɪkən]",
+        description: "A chemical element used as the primary material in the production of semiconductors and integrated circuits.",
+      },
+      {
+        id: "S",
+        title: "Software",
+        translation: "программное обеспечение",
+        transcription: "[ˈsɒftwɛər]",
+        description: "Computer programs and data that instruct the hardware how to perform specific tasks.",
+      },
+      {
+        id: "S",
+        title: "Speakers",
+        translation: "колонки",
+        transcription: "[ˈspiːkərz]",
+        description: "Output devices that convert electrical signals into sound waves, allowing users to listen to audio from a computer or other devices.",
+      },
+      {
+        id: "S",
+        title: "Storage device",
+        translation: "устройство хранения данных",
+        transcription: "[ˈstɔːrɪdʒ dɪˈvaɪs]",
+        description: "A device used to store digital data, such as files, documents, and multimedia content, for later retrieval.",
+      },
+      {
+        id: "S",
+        title: "System clock",
+        translation: "системный тактовый генератор",
+        transcription: "[ˈsɪstəm klɒk]",
+        description: "A circuit that generates regular electronic pulses, or ticks, used to synchronize the operations of various components within a computer system.",
+      },
+      {
+        id: "S",
+        title: "System unit",
+        translation: "системный блок",
+        transcription: "[ˈsɪstəm juːnɪt]",
+        description: "The main chassis or housing that contains the internal components of a computer system, such as the motherboard, CPU, memory, and storage devices.",
+      },
+      {
+        id: "T",
+        title: "Tablet",
+        translation: "планшет",
+        transcription: "[ˈtæblɪt]",
+        description: "A portable computing device with a touchscreen interface, typically larger than a smartphone and smaller than a laptop.",
+      },
+      {
+        id: "T",
+        title: "Touchpad",
+        translation: "сенсорная панель",
+        transcription: "[ˈtʌʧpæd]",
+        description: "A flat, touch-sensitive surface on a laptop or other device used to move the cursor and control the pointer.",
+      },
+      {
+        id: "T",
+        title: "Touchscreen",
+        translation: "сенсорный экран",
+        transcription: "[ˈtʌʧskriːn]",
+        description: "A display screen that is sensitive to touch, allowing users to interact with it by touching or tapping on icons, buttons, or other elements.",
+      },
+      {
+        id: "T",
+        title: "To transmit data",
+        translation: "передавать данные",
+        transcription: "[tuː trænzˈmɪt ˈdeɪtə]",
+        description: "To send digital information from one device or location to another using a communication medium such as wires, cables, or wireless connections.",
+      },
+      {
+        id: "V",
+        title: "Vacuum tube",
+        translation: "электронная лампа",
+        transcription: "[ˈvækjuːm tub]",
+        description: "An electronic device consisting of a sealed glass tube containing electrodes and a vacuum, used to control electric current.",
+      },
+      {
+        id: "V",
+        title: "Virtual keyboard",
+        translation: "виртуальная клавиатура",
+        transcription: "[ˈvɜːrtʃuəl ˈkiːˌbɔːrd]",
+        description: "An on-screen interface that simulates a physical keyboard, allowing users to input text or commands using touch or mouse input.",
+      },
+      {
+        id: "V",
+        title: "Volatile",
+        translation: "энергозависимый",
+        transcription: "[ˈvɒlətaɪl]",
+        description: "Describes computer memory or storage that loses its contents when power is removed or interrupted.",
+      },
+      {
+        id: "W",
+        title: "Wireless mouse",
+        translation: "беспроводная мышь",
+        transcription: "[ˈwaɪərlɪs maʊs]",
+        description: "A computer mouse that connects to a computer or device using wireless technology, such as Bluetooth or radio frequency (RF).",
+      },
+      {
+        id: "W",
+        title: "Write-back cache",
+        translation: "кэширование с обратной записью",
+        transcription: "[raɪt-bæk kæʃ]",
+        description: "A caching technique where data is written to the cache first and then to the main memory, improving performance by reducing memory access times.",
+      },
+      {
+        id: "W",
+        title: "Write-through cache",
+        translation: "кэширование со сквозной записью",
+        transcription: "[raɪt-θruː kæʃ]",
+        description: "A caching technique where data is simultaneously written to both the cache and main memory, ensuring consistency between the two.",
+      },
+      {
+        id: "A",
+        title: "Application",
+        translation: "приложение",
+        transcription: "[ˌæplɪˈkeɪʃən]",
+        description: "A software program designed to perform a specific task or set of tasks, such as word processing, web browsing, or gaming.",
+      },
+      {
+        id: "A",
+        title: "Application layer",
+        translation: "уровень приложений",
+        transcription: "[ˌæplɪˈkeɪʃən ˈleɪər]",
+        description: "The top layer in the OSI model responsible for providing network services directly to user applications, such as email, file transfer, and remote access.",
+      },
+      {
+        id: "B",
+        title: "Backup",
+        translation: "резервное копирование",
+        transcription: "[ˈbækʌp]",
+        description: "The process of making duplicate copies of data or files to protect against loss, corruption, or damage.",
+      },
+      {
+        id: "B",
+        title: "Bus topology",
+        translation: "шинная топология",
+        transcription: "[bʌs təˈpɑlədʒi]",
+        description: "A network topology in which all devices are connected to a single communication channel, or bus, allowing data to be transmitted to all devices on the network simultaneously.",
+      },
+      {
+        id: "C",
+        title: "CLI",
+        translation: "интерфейс командной строки",
+        transcription: "[siːlaɪ]",
+        description: "A user interface that allows users to interact with a computer system by typing commands into a terminal or command prompt, rather than using a graphical interface.",
+      },
+      {
+        id: "C",
+        title: "Capacity",
+        translation: "вместимость",
+        transcription: "[kəˈpæsɪti]",
+        description: "The maximum amount of data that can be stored, processed, or transmitted by a computer system or component within a given period of time.",
+      },
+      {
+        id: "C",
+        title: "Compatible",
+        translation: "совместимый",
+        transcription: "[kəmˈpætəbl]",
+        description: "Describes devices, software, or systems that can work together or exchange data without experiencing compatibility issues or conflicts.",
+      },
+      {
+        id: "C",
+        title: "Cooperative multitasking",
+        translation: "совместная многозадачность",
+        transcription: "[koʊˈɑpərətɪv ˌmʌltiˈtæskɪŋ]",
+        description: "A multitasking technique where multiple tasks or processes share the CPU and voluntarily yield control to each other when necessary.",
+      },
+      {
+        id: "D",
+        title: "Data transfer rate",
+        translation: "скорость передачи данных",
+        transcription: "[ˈdeɪtə ˈtrænsfər reɪt]",
+        description: "The speed at which data is transmitted from one device to another, typically measured in bits per second (bps) or bytes per second (Bps).",
+      },
+      {
+        id: "D",
+        title: "Directory",
+        translation: "каталог",
+        transcription: "[dɪˈrɛktəri]",
+        description: "A hierarchical structure used to organize and store files or other directories on a computer system, similar to a folder in a filing cabinet.",
+      },
+      {
+        id: "D",
+        title: "To distribute",
+        translation: "распространять",
+        transcription: "[dɪˈstrɪbjut]",
+        description: "To share or deliver something, such as software, files, or resources, to multiple users or locations.",
+      },
+      {
+        id: "E",
+        title: "Ethernet cable",
+        translation: "сетевой кабель",
+        transcription: "[ˈiːθərnɛt ˈkeɪbəl]",
+        description: "A type of networking cable commonly used to connect devices in a local area network (LAN), such as computers, routers, and switches.",
+      },
+      {
+        id: "E",
+        title: "External disk drive",
+        translation: "внешний жёсткий диск",
+        transcription: "[ɪkˈstɜːrnəl dɪsk draɪv]",
+        description: "A storage device that connects to a computer system externally via a USB, Thunderbolt, or other interface, typically used for backup, file storage, or data transfer.",
+      },
+      {
+        id: "F",
+        title: "Fiber optic cable",
+        translation: "оптоволоконный кабель",
+        transcription: "[ˈfaɪbər ˈɒptɪk ˈkeɪbəl]",
+        description: "A type of networking cable that transmits data using pulses of light through strands of optical fibers, offering high bandwidth and resistance to electromagnetic interference.",
+      },
+      {
+        id: "F",
+        title: "Firmware",
+        translation: "прошивка",
+        transcription: "[ˈfɜːrmweər]",
+        description: "Software that is permanently stored in memory chips on hardware devices, such as computer motherboards, routers, or printers, and controls the device's basic operations.",
+      },
+      {
+        id: "F",
+        title: "Floppy disk",
+        translation: "дискета",
+        transcription: "[ˈflɒpi dɪsk]",
+        description: "A magnetic storage disk enclosed in a flexible plastic casing, commonly used to store data or programs for computers with floppy disk drives.",
+      },
+      {
+        id: "G",
+        title: "GUI",
+        translation: "графический пользовательский интерфейс",
+        transcription: "[ˌdʒiː juː ˈaɪ]",
+        description: "A user interface that allows users to interact with a computer system using graphical elements such as icons, buttons, windows, and menus, rather than text-based commands.",
+      },
+      {
+        id: "H",
+        title: "Hot spot",
+        translation: "точка доступа в общественных местах",
+        transcription: "[hɒt spɒt]",
+        description: "A public location where Wi-Fi access is available to users with Wi-Fi enabled devices, typically provided by a wireless access point (WAP) connected to the internet.",
+      },
+      {
+        id: "L",
+        title: "Laser beam",
+        translation: "лазерный луч",
+        transcription: "[ˈleɪzər biːm]",
+        description: "A concentrated beam of light produced by a laser device, used in various applications such as laser printing, laser cutting, and optical communications.",
+      },
+      {
+        id: "M",
+        title: "Memory card",
+        translation: "карта памяти",
+        transcription: "[ˈmɛməri kɑːrd]",
+        description: "A small, portable storage device used to store digital data such as photos, videos, music, or documents, typically used in cameras, smartphones, or other electronic devices.",
+      },
+      {
+        id: "M",
+        title: "Mesh topology",
+        translation: "ячеистая топология, топология сетки",
+        transcription: "[mɛʃ təˈpɒlədʒi]",
+        description: "A network topology in which each device is connected to multiple other devices, forming a mesh-like structure that provides redundancy and fault tolerance.",
+      },
+      {
+        id: "M",
+        title: "Multi-tasking",
+        translation: "многозадачный",
+        transcription: "[ˌmʌltiˈtæskɪŋ]",
+        description: "The ability of a computer system to execute multiple tasks or processes simultaneously, allowing users to perform multiple operations at the same time.",
+      },
+      {
+        id: "N",
+        title: "Network backbone",
+        translation: "сетевая магистраль",
+        transcription: "[ˈnɛtwɜːk ˈbækboʊn]",
+        description: "The main high-speed network infrastructure that connects multiple smaller networks or segments together, providing a pathway for data to travel between devices.",
+      },
+      {
+        id: "N",
+        title: "Network gateway",
+        translation: "межсетевой шлюз",
+        transcription: "[ˈnɛtwɜːk ˈɡeɪtweɪ]",
+        description: "A device or software component that serves as an entry point or interface between two different networks, allowing data to be transmitted between them.",
+      },
+      {
+        id: "O",
+        title: "Office suite",
+        translation: "офисный пакет",
+        transcription: "[ˈɔːfɪs swiːt]",
+        description: "A collection of productivity software applications, such as word processors, spreadsheets, and presentation software, bundled together for use in an office or business environment.",
+      },
+      {
+        id: "O",
+        title: "Open-source software",
+        translation: "программы с открытым исходным кодом",
+        transcription: "[ˈoʊpən sɔrs ˈsɒftwɛr]",
+        description: "Software that is distributed with its source code freely available for anyone to view, modify, or distribute, typically developed and maintained by a community of volunteers.",
+      },
+      {
+        id: "P",
+        title: "Partition",
+        translation: "раздел на жёстком диске",
+        transcription: "[pɑːrˈtɪʃən]",
+        description: "A logical division or section of a hard disk drive or other storage device that appears as a separate volume or drive letter in the operating system, used for organizing and storing data.",
+      },
+      {
+        id: "P",
+        title: "Peer-to-peer network",
+        translation: "одноранговая сеть",
+        transcription: "[pɪər tə pɪər ˈnɛtwɜːrk]",
+        description: "A decentralized network architecture in which each device or node can act as both a client and a server, allowing users to share resources and communicate directly with each other.",
+      },
+      {
+        id: "P",
+        title: "Platter",
+        translation: "пластина жёсткого диска",
+        transcription: "[ˈplætər]",
+        description: "A circular, flat, magnetic disk inside a hard disk drive that stores data by magnetizing particles on its surface, typically made of glass or aluminum.",
+      },
+      {
+        id: "P",
+        title: "Pit",
+        translation: "ячейка памяти у оптических дисков",
+        transcription: "[pɪt]",
+        description: "A small depression or indentation on the surface of an optical disc, such as a CD or DVD, used to represent binary data during the disc mastering process.",
+      },
+      {
+        id: "P",
+        title: "Preemptive multitasking",
+        translation: "вымещающая многозадачность",
+        transcription: "[priːˈɛmptɪv ˌmʌltiˈtæskɪŋ]",
+        description: "A multitasking technique where the operating system allocates CPU time to multiple tasks or processes based on priority, preempting lower-priority tasks when necessary.",
+      },
+      {
+        id: "P",
+        title: "Proprietary software",
+        translation: "лицензионное, запатентованное ПО",
+        transcription: "[prəˈpraɪətəri ˈsɒftwɛr]",
+        description: "Software that is owned, copyrighted, and licensed by a specific company or individual, typically distributed under restrictive licensing terms that limit its use, modification, or distribution.",
+      },
+      {
+        id: "R",
+        title: "Remote access",
+        translation: "удалённый доступ",
+        transcription: "[rɪˈmoʊt ˈæksɛs]",
+        description: "The ability to connect to and control a computer or network from a remote location using a network connection, typically via the internet or a dial-up modem.",
+      },
+      {
+        id: "R",
+        title: "Ring topology",
+        translation: "кольцевая топология",
+        transcription: "[rɪŋ təˈpɒlədʒi]",
+        description: "A network topology in which each device is connected to two other devices, forming a closed loop or ring, with data traveling in one direction around the ring.",
+      },
+      {
+        id: "R",
+        title: "Router",
+        translation: "маршрутизатор",
+        transcription: "[ˈruːtər]",
+        description: "A networking device that forwards data packets between computer networks, typically using routing information to determine the best path for data transmission.",
+      },
+      {
+        id: "S",
+        title: "Seek time (access time)",
+        translation: "время поиска (время доступа)",
+        transcription: "[siːk taɪm ˈæksɛs taɪm]",
+        description: "The time it takes for a storage device, such as a hard disk drive or optical disc drive, to locate and retrieve data from a specific location on the storage medium, measured in milliseconds (ms).",
+      },
+      {
+        id: "S",
+        title: "Session layer",
+        translation: "сеансовый уровень",
+        transcription: "[ˈsɛʃən ˈleɪər]",
+        description: "The fifth layer of the OSI model responsible for establishing, maintaining, and terminating communication sessions between devices, including synchronization, error checking, and data flow control.",
+      },
+      {
+        id: "S",
+        title: "Simultaneous multithreading",
+        translation: "параллельная многопоточность",
+        transcription: "[ˌsɪmlˈteɪniəs ˌmʌltiˈθrɛdɪŋ]",
+        description: "A technology that allows multiple threads or processes to execute simultaneously on a CPU core, improving overall performance and resource utilization.",
+      },
+      {
+        id: "S",
+        title: "Spreadsheet",
+        translation: "электронная таблица",
+        transcription: "[ˈsprɛdʃiːt]",
+        description: "A computer application used to organize, analyze, and manipulate numerical data in the form of rows and columns, typically used for financial calculations, data analysis, and reporting.",
+      },
+      {
+        id: "S",
+        title: "Storage medium",
+        translation: "носитель информации",
+        transcription: "[ˈstɔːrɪdʒ ˈmiːdiəm]",
+        description: "Any physical device or material used to store digital data, such as magnetic disks, optical discs, flash drives, or solid-state drives (SSDs).",
+      },
+      {
+        id: "T",
+        title: "Time-sharing OS",
+        translation: "операционная система с режимом разделения времени",
+        transcription: "[taɪm ˈʃɛrɪŋ ˌoʊˈɛs]",
+        description: "An operating system that allows multiple users to share a single computer system simultaneously, dividing CPU time and resources among multiple tasks or processes.",
+      },
+      {
+        id: "T",
+        title: "Track",
+        translation: "дорожка на CD/жёстком диске",
+        transcription: "[træk]",
+        description: "A concentric circular path on the surface of a storage medium, such as a CD or hard disk drive, used to organize and store data in sectors or blocks.",
+      },
+      {
+        id: "U",
+        title: "USB-flash drive / memory stick",
+        translation: "флеш-накопитель",
+        transcription: "[ˌjuːɛsˈbiː flæʃ draɪv / ˈmɛməri stɪk]",
+        description: "A small, portable storage device that connects to a computer system via a USB port and is used to store, transfer, or backup digital data, often referred to as a USB flash drive, thumb drive, or memory stick.",
+      },
+      {
+        id: "W",
+        title: "Wireless access point",
+        translation: "беспроводная точка доступа",
+        transcription: "[ˈwaɪərləs ˈæksɛs pɔɪnt]",
+        description: "A networking device that allows wireless devices to connect to a wired network or the internet, typically using Wi-Fi technology and providing a local area network (LAN) connection.",
+      },
+      {
+        id: "W",
+        title: "Word processor",
+        translation: "текстовый редактор",
+        transcription: "[wɜːrd ˈprɒsɛsə]",
+        description: "A computer application used for creating, editing, formatting, and printing text-based documents, offering features such as spell check, grammar check, and document templates.",
+      }
+    ]
 
-    <script>
-      // Создаем объект для хранения информации о словах
-      const words = [
-        {
-          id: "A",
-          title: "Adware",
-          translation: "Рекламное ПО",
-          transcription: "[ˈædˌwɛə]",
-          description:
-            "Software that automatically displays or downloads advertising material (often unwanted) when a user is online.",
-        },
-        {
-          id: "A",
-          title: "Antivirus software",
-          translation: "Противовирусное ПО",
-          transcription: "[ˌæntiˈvaɪrəs ˈsɒftwɛə]",
-          description:
-            "Software designed to detect and remove computer viruses and other malicious software.",
-        },
-        // Другие слова добавляем аналогично
-        {
-          id: "C",
-          title: "Cybercrime",
-          translation: "Киберпреступность",
-          transcription: "[ˈsaɪbər kraɪm]",
-          description:
-            "Criminal activities carried out by means of computers or the Internet.",
-        },
-        {
-          id: "C",
-          title: "Cybersecurity",
-          translation: "Кибербезопасность",
-          transcription: "[ˈsaɪbərˌsikjʊrɪti]",
-          description:
-            "Measures taken to protect a computer or computer system against unauthorized access or attack.",
-        },
-        // Другие слова добавляем аналогично
-      ];
+    words.sort((a, b) => a.title.localeCompare(b.title))
 
-      // Функция для генерации HTML на основе массива слов
-      function generateWordHTML(word) {
-        return `
+
+    function generateWordHTML(word) {
+      return `
             <div class="word-section" id="${word.id}">
                 <h2 class="word-title">${word.title}</h2>
                 <img class="word-image" src="https://via.placeholder.com/150" alt="${word.title}" />
@@ -153,26 +1227,15 @@
                     Description: ${word.description}
                 </p>
             </div>
-        `;
-      }
+        `
+    }
 
-      // Получаем контейнер для слов
-      const wordContainer = document.getElementById("wordContainer");
+    const wordContainer = document.getElementById("wordContainer")
+    words.forEach((word) => {
+      const wordHTML = generateWordHTML(word)
+      wordContainer.insertAdjacentHTML("beforeend", wordHTML)
+    });
+  </script>
+</body>
 
-      // Добавляем каждое слово в контейнер
-      words.forEach((word) => {
-        wordContainer.innerHTML += generateWordHTML(word);
-      });
-
-      // Добавляем прокрутку при клике на ссылки навигации
-      document.querySelectorAll(".navigation a").forEach((link) => {
-        link.addEventListener("click", function (e) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute("href")).scrollIntoView({
-            behavior: "smooth",
-          });
-        });
-      });
-    </script>
-  </body>
 </html>
