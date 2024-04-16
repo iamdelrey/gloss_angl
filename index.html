@@ -18,7 +18,7 @@
       justify-content: center;
       padding: 20px;
       background-color: #444;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      border: 2px solid rgba(0, 0, 0, 0.1);
     }
 
     .navigation a {
@@ -40,7 +40,7 @@
       background-color: #fff;
       margin: 20px;
       border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      border: 2px solid rgba(0, 0, 0, 0.1);
     }
 
     .word-title {
@@ -52,7 +52,7 @@
     .word-image {
       max-width: 200px;
       border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      border: 2px solid rgba(0, 0, 0, 0.1);
     }
 
     .word-details {
@@ -67,8 +67,7 @@
       background-color: #f4f4f4;
       margin: 20px;
       border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-
+      border: 2px solid rgba(0, 0, 0, 0.1);
     }
 
     .abbreviation-title {
@@ -100,6 +99,8 @@
     <a href="#N">N</a>
     <a href="#P">P</a>
     <a href="#R">R</a>
+  </div>
+  <div class="navigation">
     <a href="#S">S</a>
     <a href="#T">T</a>
     <a href="#U">U</a>
@@ -1220,7 +1221,7 @@
       return `
             <div class="word-section" id="${word.id}">
                 <h2 class="word-title">${word.title}</h2>
-                <img class="word-image" src="https://via.placeholder.com/150" alt="${word.title}" />
+                <img class="word-image" src="images/cat.jpg" alt="${word.title}" />
                 <p class="word-details">
                     Translation: ${word.translation}<br />
                     Transcription: ${word.transcription}<br />
